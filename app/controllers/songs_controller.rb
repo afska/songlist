@@ -33,7 +33,7 @@ class SongsController < ApplicationController
 	def request_song
 		params
 			.require(:song)
-			.permit :title, :author, :submitted_at
+			.permit :title, :author, :genre
 	end
 
 	def status(code)
