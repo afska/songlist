@@ -39,7 +39,7 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
 # Use MongoDb as the DB for the models
 gem 'mongoid', '4.0.0.beta1', github: 'mongoid/mongoid'

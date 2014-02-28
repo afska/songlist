@@ -1,28 +1,40 @@
 include Rack
 
 class SongsController < ApplicationController
-	def index
-		Song.create(title: "La danza de los mirlos")
+	skip_before_filter :verify_authenticity_token  
 
-		algo = Song.new()
-		render json: algo, status: status(:ok)
+	def index
+		songs = Song.all
+		render json: songs, status: status(:ok)
+	end
+
+	def get
+		song = Song.find params[:id]
+		render json: song, status: status(:ok)
 	end
 
 	def create
-		render json: { id: 22 }, status: status(:created)
+		song = Song.create request_song
+		render json: song, status: status(:created)
 	end
 
 	def update
 		render status: status(:ok)
 	end
 
-	def destroy
+	def delete
 		render status: status(:ok)
 	end
 
 	#------
 	private
 	#------
+
+	def request_song
+		params
+			.require(:song)
+			.permit :title, :author, :submitted_at
+	end
 
 	def status(code)
 		Utils.status_code(code)
