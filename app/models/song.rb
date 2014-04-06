@@ -1,9 +1,4 @@
-class Song
-	include Mongoid::Document
-	include ActiveModel::Validations
-
-	before_create :assign_id
-
+class Song < Model
 	field :title, type: String
 	field :author, type: String
 	field :genre, type: String
@@ -22,7 +17,7 @@ class Song
 	private
 	#------
 
-	def assign_id
-		self.id = "#{self.genre}-#{self.author}-#{self.title}"
+	def get_id
+		"#{self.genre}-#{self.author}-#{self.title}"
 	end
 end 
