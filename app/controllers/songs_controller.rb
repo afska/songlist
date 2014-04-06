@@ -10,12 +10,12 @@ class SongsController < ApplicationController
 
 	def get
 		song = Song.find params[:id]
-		render json: song, status: status(:ok)
+		validate_and_render song, :ok
 	end
 
 	def create
 		song = Song.create request_song
-		render json: song, status: status(:created)
+		validate_and_render song, :ok
 	end
 
 	def update
@@ -38,5 +38,13 @@ class SongsController < ApplicationController
 
 	def status(code)
 		Utils.status_code(code)
+	end
+
+	def validate_and_render(model, code)
+		if model.valid?
+			render json: model, status: status(code)
+		else
+			render json: { errors: model.errors.messages }, status:status(:bad_request)
+		end
 	end
 end
