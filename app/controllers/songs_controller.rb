@@ -1,4 +1,4 @@
-class SongsController < BaseController
+class SongsController < ApiController
 	def index
 		songs = Song.all
 		json! songs.map { |s| transform(s) }, :ok
@@ -11,13 +11,14 @@ class SongsController < BaseController
 
 	def create
 		song = Song.create body_song
-		validate song
+		song.validate
 		json! transform(song), :created
 	end
 
 	def update
 		song = Song.find id
 		song.update_attributes body_song
+		song.validate
 		json! transform(song), :ok
 	end
 

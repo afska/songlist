@@ -1,5 +1,3 @@
-require_rel "dtos"
-
 class Song < Model
 	include Mongoid::Document
 	before_validation :before_save
