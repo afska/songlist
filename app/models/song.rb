@@ -37,6 +37,7 @@ class Song < Model
 	end
 
 	#TODOs:
+	# - Testear algo para ver cómo se hacen los tests
 	# - Hacer autenticación (cookie-content, algo simple pero seguro -con api de fb-)
 	# - Empezar la ui (angular, login with fb)
 end
