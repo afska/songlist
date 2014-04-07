@@ -1,12 +1,12 @@
 class Song < Model
 	include Mongoid::Document
-	before_validation :set_identificator
+	before_validation :before_save
 
 	field :identificator, type: String
 	field :title, type: String
 	field :author, type: String
 	field :genre, type: String
-	field :submitted_at, type: Date
+	field :submitted_at, type: DateTime
 	field :user, type: String
 
 	validates_presence_of :title
@@ -23,7 +23,11 @@ class Song < Model
 	private
 	#------
 
-	def set_identificator
+	def before_save
 		self.identificator = "#{self.genre}-#{self.author}-#{self.title}"
+		self.submitted_at = DateTime.now
 	end
+
+	#TODOs:
+	# - Ignorar el identificator en el json
 end 

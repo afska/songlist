@@ -14,7 +14,7 @@ class BaseController < ApplicationController
 
 	def validate(model)
 		if model.invalid?
-			raise ValidationException.new(model.errors.messages)
+			raise Exceptions::ValidationException.new(model.errors.messages)
 		end
 	end
 
@@ -28,7 +28,7 @@ class BaseController < ApplicationController
 		errors! [
 			{ parameter: [ "is missing" ] }
 		]
-	rescue ValidationException => e
+	rescue Exceptions::ValidationException => e
 		errors! e.messages
 	end
 
