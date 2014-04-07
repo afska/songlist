@@ -1,4 +1,5 @@
 include Rack
+require_all "app/models/exceptions"
 
 class BaseController < ActionController::Base
 	protect_from_forgery with: :exception
@@ -13,14 +14,14 @@ class BaseController < ActionController::Base
 		render json: json, status: status(code)
 	end
 
-	def validate(model)
-		if model.invalid?
-			raise Exceptions::ValidationException.new(model.errors.messages)
-		end
-	end
-
 	def id
 		params[:id]
+	end
+	
+	def validate(model)
+		if model.invalid?
+			raise ValidationException.new(model.errors.messages)
+		end
 	end
 
 	def transform(model)
@@ -41,7 +42,7 @@ class BaseController < ActionController::Base
 		errors! [
 			{ entity: [ "not found" ] }
 		]
-	rescue Exceptions::ValidationException => e
+	rescue ValidationException => e
 		errors! e.messages
 	end
 

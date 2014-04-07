@@ -1,3 +1,5 @@
+require_rel "dtos"
+
 class Song < Model
 	include Mongoid::Document
 	before_validation :before_save
@@ -37,15 +39,7 @@ class Song < Model
 	end
 
 	#TODOs:
-	# - Entender los namespaces. ¿Por qué tengo que catchear Exception::ValidationException?
 	# - Hacer el put
 	# - Hacer autenticación (cookie-content, algo simple pero seguro -con api de fb-)
 	# - Empezar la ui (angular, login with fb)
-end
-
-class SongDTO < Struct.new(
-	:_id, :title,
-	:author, :genre,
-	:submitted_at
-)
 end

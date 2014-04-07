@@ -41,5 +41,8 @@ end
 # Use debugger
 gem 'debugger', group: [:development, :test]
 
+# Use require_all for including many files
+gem 'require_all'
+
 # Use MongoDb as the DB for the models
 gem 'mongoid', '4.0.0.beta1', github: 'mongoid/mongoid'
