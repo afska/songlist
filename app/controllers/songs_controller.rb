@@ -1,18 +1,18 @@
 class SongsController < BaseController
 	def index
 		songs = Song.all
-		json! songs, :ok
+		json! songs.map { |s| transform(s) }, :ok
 	end
 
 	def get
 		song = Song.find id
-		json! song, :ok
+		json! transform(song), :ok
 	end
 
 	def create
 		song = Song.create body_song
 		validate song
-		json! song, :created
+		json! transform(song), :created
 	end
 
 	def update

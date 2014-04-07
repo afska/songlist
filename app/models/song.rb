@@ -19,6 +19,14 @@ class Song < Model
 
 	validates_uniqueness_of :identificator
 
+	def to_dto
+		SongDTO.new(
+			self._id.to_str, self.title, 
+			self.author, self.genre,
+			self.submitted_at
+		)
+	end
+
 	#------
 	private
 	#------
@@ -29,9 +37,15 @@ class Song < Model
 	end
 
 	#TODOs:
-	# - Ignorar el identificator en el json
 	# - Entender los namespaces. ¿Por qué tengo que catchear Exception::ValidationException?
 	# - Hacer el put
 	# - Hacer autenticación (cookie-content, algo simple pero seguro -con api de fb-)
 	# - Empezar la ui (angular, login with fb)
-end 
+end
+
+class SongDTO < Struct.new(
+	:_id, :title,
+	:author, :genre,
+	:submitted_at
+)
+end

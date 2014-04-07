@@ -1,6 +1,7 @@
 include Rack
 
-class BaseController < ApplicationController
+class BaseController < ActionController::Base
+	protect_from_forgery with: :exception
 	skip_before_filter :verify_authenticity_token
 	around_filter :catch_exceptions
 
@@ -20,6 +21,10 @@ class BaseController < ApplicationController
 
 	def id
 		params[:id]
+	end
+
+	def transform(model)
+		model.to_dto
 	end
 
 	#------
