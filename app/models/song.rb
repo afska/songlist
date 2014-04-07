@@ -30,4 +30,5 @@ class Song < Model
 
 	#TODOs:
 	# - Ignorar el identificator en el json
+	# - Entender los namespaces. ¿Por qué tengo que catchear Exception::ValidationException?
 end 
