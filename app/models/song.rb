@@ -1,4 +1,7 @@
 class Song < Model
+	include Mongoid::Document
+	include ActiveModel::Validations
+
 	field :title, type: String
 	field :author, type: String
 	field :genre, type: String
@@ -12,12 +15,4 @@ class Song < Model
 	validates_length_of :title, maximum: 80
 	validates_length_of :author, maximum: 50
 	validates_length_of :genre, maximum: 30
-
-	#------
-	private
-	#------
-
-	def get_id
-		"#{self.genre}-#{self.author}-#{self.title}"
-	end
 end 

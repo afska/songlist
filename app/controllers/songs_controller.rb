@@ -44,7 +44,7 @@ class SongsController < ApplicationController
 		if model.valid?
 			render json: model, status: status(code)
 		else
-			render json: { errors: model.errors.messages }, status:status(:bad_request)
+			render json: { errors: model.errors.messages }, status: status(:bad_request)
 		end
 	end
 end
