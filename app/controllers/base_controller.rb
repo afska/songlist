@@ -18,6 +18,10 @@ class BaseController < ApplicationController
 		end
 	end
 
+	def id
+		params[:id]
+	end
+
 	#------
 	private
 	#------
@@ -27,6 +31,10 @@ class BaseController < ApplicationController
 	rescue ActionController::ParameterMissing
 		errors! [
 			{ parameter: [ "is missing" ] }
+		]
+	rescue Mongoid::Errors::DocumentNotFound
+		errors! [
+			{ entity: [ "not found" ] }
 		]
 	rescue Exceptions::ValidationException => e
 		errors! e.messages

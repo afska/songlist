@@ -5,7 +5,7 @@ class SongsController < BaseController
 	end
 
 	def get
-		song = Song.find params[:id]
+		song = Song.find id
 		json! song, :ok
 	end
 
@@ -20,6 +20,7 @@ class SongsController < BaseController
 	end
 
 	def delete
+		Song.find(id).remove
 		json! "", :ok
 	end
 

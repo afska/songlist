@@ -31,4 +31,7 @@ class Song < Model
 	#TODOs:
 	# - Ignorar el identificator en el json
 	# - Entender los namespaces. ¿Por qué tengo que catchear Exception::ValidationException?
+	# - Hacer el put
+	# - Hacer autenticación (cookie-content, algo simple pero seguro -con api de fb-)
+	# - Empezar la ui (angular, login with fb)
 end 
