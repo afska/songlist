@@ -1,4 +1,3 @@
-include Rack
 require_all "app/models/exceptions"
 
 class BaseController < ActionController::Base
@@ -11,13 +10,13 @@ class BaseController < ActionController::Base
 	#--------
 
 	def json!(json, code)
-		render json: json, status: status(code)
+		render json: json, status: code
 	end
 
 	def id
 		params[:id]
 	end
-	
+
 	def validate(model)
 		if model.invalid?
 			raise ValidationException.new(model.errors.messages)
@@ -47,10 +46,6 @@ class BaseController < ActionController::Base
 	end
 
 	def errors!(errors)
-		render json: { errors: errors }, status: status(:bad_request)
-	end
-
-	def status(code)
-		Utils.status_code(code)
+		render json: { errors: errors }, status: :bad_request
 	end
 end

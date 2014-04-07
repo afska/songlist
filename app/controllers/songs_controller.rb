@@ -16,7 +16,9 @@ class SongsController < BaseController
 	end
 
 	def update
-		json! "", :ok
+		song = Song.find id
+		song.update_attributes body_song
+		json! transform(song), :ok
 	end
 
 	def delete

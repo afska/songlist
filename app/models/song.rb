@@ -39,7 +39,6 @@ class Song < Model
 	end
 
 	#TODOs:
-	# - Hacer el put
 	# - Hacer autenticación (cookie-content, algo simple pero seguro -con api de fb-)
 	# - Empezar la ui (angular, login with fb)
 end
