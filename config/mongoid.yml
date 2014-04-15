@@ -1,5 +1,3 @@
-# Warning: YML files can't use tabs for indentation
-
 development:
     adapter: mongoid
     sessions:

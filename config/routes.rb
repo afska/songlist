@@ -6,4 +6,6 @@ Songlist::Application.routes.draw do
 		put "songs/:id", to: "songs#update"
 		delete "songs/:id", to: "songs#delete"
 	end
+
+	root 'home#index'
 end
