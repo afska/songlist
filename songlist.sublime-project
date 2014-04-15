@@ -3,7 +3,7 @@
 		{
 			"follow_symlinks": true,
 			"path": ".",
-			"folder_exclude_patterns": [".*", "tmp", "log"],
+			"folder_exclude_patterns": [".*", "bin", "tmp", "log"],
 			"file_exclude_patterns": [".*", "songlist.sublime-workspace"]
 		}
 	],
