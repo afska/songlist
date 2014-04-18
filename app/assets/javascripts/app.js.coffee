@@ -4,7 +4,12 @@
 		"ngRoute"
 		"ngResource"
 		"ngCookies"
+		"pascalprecht.translate"
 	]
 
 	.config ($routeProvider) ->
-		$routeProvider.otherwise redirectTo: '/'
+		$routeProvider.otherwise redirectTo: "/"
+
+	.config ($translateProvider) ->
+		$translateProvider.useUrlLoader "language"
+		$translateProvider.determinePreferredLanguage()

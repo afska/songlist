@@ -38,6 +38,10 @@ class Song < Model
 	end
 
 	#TODOs:
-	# - Empezar la ui (angular, login with fb)
-	# - Hacer autenticación (cookie-content, algo simple pero seguro -con api de fb-)
+	# - Login with fb
+	# - Hacer autenticación en la api (con algo simple)
+	# - Deshardcodear el i18n y usar el config/locales/en.yml
+	# - Empezar a hacer los resources
+	# - Congelar las versiones de bower.json
+	# - Testear cosas!
 end

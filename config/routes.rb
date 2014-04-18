@@ -7,5 +7,7 @@ Songlist::Application.routes.draw do
 		delete "songs/:id", to: "songs#delete"
 	end
 
+	get "language", to: "language#get"
+
 	root 'home#index'
 end
