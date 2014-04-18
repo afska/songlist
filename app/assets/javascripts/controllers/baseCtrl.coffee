@@ -1,7 +1,7 @@
 # A Home for a Resource. A model class and
 # an adapter can be provided for the perform of specific
 # transformations, after the resource is fetched.
-class @Home
+class Home
 	constructor: (@resource, @modelClass, @adapter) ->
 
 	# Get all
