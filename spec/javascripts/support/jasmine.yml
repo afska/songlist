@@ -1,0 +1,3 @@
+# Minimalist configuration when leveraging asset pipeline
+spec_files:
+  - "**/*[Ss]pec.{js,coffee}"

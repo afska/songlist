@@ -46,3 +46,8 @@ gem 'require_all'
 
 # Use MongoDb as the DB for the models
 gem 'mongoid', '4.0.0.beta1', github: 'mongoid/mongoid'
+
+# Use Jasmine for JS unit tests
+group :test, :development do
+  gem 'jasmine-rails'
+end

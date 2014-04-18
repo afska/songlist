@@ -1,4 +1,6 @@
 Songlist::Application.routes.draw do
+	mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
+	
 	scope "api", defaults: {format: :json} do
 		get "songs", to: "songs#index"
 		get "songs/:id", to: "songs#get"
