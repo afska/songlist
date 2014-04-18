@@ -5,7 +5,7 @@ class TweetsCtrl extends BaseCtrl
 		hashtags: ->
 
 	@route "/tweets",
-		templateUrl: "partials/tweets"
+		templateUrl: "templates/tweets"
 
 	@inject()
 
@@ -14,14 +14,14 @@ class UserTweetsCtrl extends TweetsCtrl
 		followers: ->
 
 	@route "/tweets/me",
-		templateUrl: "partials/user-tweets"
+		templateUrl: "templates/user-tweets"
 
 	@inject()
 
 describe "BaseCtrl", ->
-	it "defining a controller should register its route on Angular", inject ($route) ->
+	it "should register the controller's route on Angular", inject ($route) ->
 		expect($route.routes["/tweets"]).toHaveProperties
-			templateUrl: "partials/tweets"
+			templateUrl: "templates/tweets"
 			controller: "TweetsCtrl"
 
 	it "should set references to the resolved dependencies in the scope", inject ($controller, $rootScope) ->

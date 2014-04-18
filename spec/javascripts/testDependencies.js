@@ -1,5 +1,5 @@
 //= require dependencies
 
 //= require angular-mocks/angular-mocks
-//= require angularInit
+//= require angularSpecInit
 //= require_tree ./support/matchers

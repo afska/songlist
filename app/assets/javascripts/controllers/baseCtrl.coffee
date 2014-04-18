@@ -32,14 +32,12 @@ class Home
 		new @modelClass element
 
 # A Controller. The route and inject methods MUST be called.
-# Otherwise, angular won't found it or will not inject the $scope.
+# Otherwise, angular won't found it or it won't inject the $scope.
 # A @s variable is created as a shortcut for $scope.
 class @BaseCtrl
 	copyAndExtend = (destination, origin) ->
 		copy = angular.copy destination or {}
 		angular.extend copy, origin or {}
-
-	@$inject = ["$scope"] #default
 
 	# Make the controller visible for a specific route.
 	# If the route has params (id), the pattern is: "/route/:id"
@@ -64,11 +62,11 @@ class @BaseCtrl
 			.uniq()
 			.value()
 
-	# Get all the resources
+	# Get all the entities of a resource
 	@getAll: (resource, modelClass, adapter) ->
 		new Home(resource, modelClass, adapter).get()
 
-	# Get a resource
+	# Get an entity by id
 	@getById: (id, resource, modelClass, adapter) ->
 		new Home(resource, modelClass, adapter).getById id
 
