@@ -2,7 +2,11 @@
   "name": "songlist",
   "version": "1.0.0",
   "dependencies": {
+    "bootstrap": "*",
     "angular": "*",
-    "bootstrap": "*"
+    "angular-route": "*",
+    "angular-resource": "*",
+    "angular-cookies": "*",
+    "angular-facebook": "*"
   }
 }
