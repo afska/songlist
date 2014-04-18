@@ -2,7 +2,7 @@ beforeEach ->
 	jasmine.addMatchers
 		toBeAnInstanceOf: ->
 			compare: (actual, expectedTypeName) ->
-				actualTypeName = actualTypeName.constructor.name
+				actualTypeName = actual.constructor.name
 
 				if actualTypeName == expectedTypeName
 					return pass: true, message: ""

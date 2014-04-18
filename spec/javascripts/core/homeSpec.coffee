@@ -42,6 +42,7 @@ describe "Home", ->
 		home.get().then (dogs) =>
 			getMessage = (it) -> it.helloMessage()
 
+			expect(dogs[0]).toBeAnInstanceOf "Dog"
 			expect(dogs.map(getMessage))
 				.toDeepEqual ["My name is Cacho", "My name is Ruperta"]
 
@@ -51,6 +52,7 @@ describe "Home", ->
 		home = new Home(DogsResource, Dog)
 
 		home.getById(2).then (dog) =>
+			expect(dog).toBeAnInstanceOf "Dog"
 			expect(dog.helloMessage())
 				.toBe "My name is Ruperta"
 
