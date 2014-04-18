@@ -39,6 +39,8 @@ class @BaseCtrl
 		copy = angular.copy destination or {}
 		angular.extend copy, origin or {}
 
+	@$inject = ["$scope"] #default
+
 	# Make the controller visible for a specific route.
 	# If the route has params (id), the pattern is: "/route/:id"
 	@route: (path, route) ->
@@ -57,12 +59,12 @@ class @BaseCtrl
 
 	# Inject dependencies (including the resolves).
 	@inject: (args...) ->
-		@$inject = _(['$scope'])
+		@$inject = _(["$scope"])
 			.union(@$inject, args, _.keys @ctrlResolve)
 			.uniq()
 			.value()
 
-	# Get all resources
+	# Get all the resources
 	@getAll: (resource, modelClass, adapter) ->
 		new Home(resource, modelClass, adapter).get()
 
@@ -83,8 +85,8 @@ class @BaseCtrl
 		@s = @$scope
 
 		for key, fn of @constructor.prototype
-			continue unless typeof fn is 'function'
-			continue if key in ['constructor', 'initialize'] or key[0] is '_'
+			continue unless typeof fn is "function"
+			continue if key in ["constructor", "initialize"] or key[0] is "_"
 			@s[key] = fn.bind?(@)
 
 		if @constructor.ctrlResolve

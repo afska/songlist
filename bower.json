@@ -5,6 +5,7 @@
     "bootstrap": "*",
     "lodash": "*",
     "angular": "*",
+    "angular-mocks": "*",
     "angular-route": "*",
     "angular-resource": "*",
     "angular-cookies": "*",
