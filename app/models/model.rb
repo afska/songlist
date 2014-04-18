@@ -1,6 +1,7 @@
 require_rel "dtos"
 require_rel "exceptions"
 
+# A model that will be persisted in the db
 class Model
 	include ActiveModel::Validations
 

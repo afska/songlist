@@ -1,3 +1,4 @@
+# Generates errors in JSON from exceptions
 module ExceptionFilter
 	def catch_exceptions
 		yield

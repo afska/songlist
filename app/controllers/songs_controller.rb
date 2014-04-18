@@ -1,3 +1,4 @@
+# Handles the CRUD operations with Songs
 class SongsController < ApiController
 	def index
 		songs = Song.all

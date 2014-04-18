@@ -1,3 +1,4 @@
+# Generates errors in JSON from JSON parse errors
 class CatchJsonParseErrors
 	def initialize(app)
 		@app = app

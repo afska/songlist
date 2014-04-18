@@ -1,5 +1,6 @@
 require_rel "filters"
 
+# Generic controller for a REST Api
 class ApiController < ActionController::Base
 	include ExceptionFilter
 	around_filter :catch_exceptions
