@@ -43,5 +43,4 @@ class Song < Model
 	# - Deshardcodear el i18n y usar el config/locales/en.yml
 	# - Empezar a hacer los resources
 	# - Congelar las versiones de bower.json
-	# - Testear cosas!
 end

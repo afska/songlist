@@ -16,7 +16,7 @@ class @BaseCtrl
 		app.config ($routeProvider) ->
 			$routeProvider.when path, angular.extend(base, route)
 
-	# Add dependencies (promises) that must be resolved before instanciation.
+	# Add dependencies (promises) that must be resolved before instantiation.
 	# This dependencies will be injected in the $scope.
 	# The route params can be accesed with: $route.current.params.id
 	@resolve: (resolve) ->
@@ -30,12 +30,12 @@ class @BaseCtrl
 			.value()
 
 	# Get all the entities of a resource
-	@getAll: (resource, modelClass, adapter) ->
-		new Home(resource, modelClass, adapter).get()
+	@getAll: (resource, modelClass) ->
+		new Home(resource, modelClass).get()
 
 	# Get an entity by id
-	@getById: (id, resource, modelClass, adapter) ->
-		new Home(resource, modelClass, adapter).getById id
+	@getById: (id, resource, modelClass) ->
+		new Home(resource, modelClass).getById id
 
 	@_register: ->
 		name = @name || @toString().match(/function\s*(.*?)\(/)?[1]

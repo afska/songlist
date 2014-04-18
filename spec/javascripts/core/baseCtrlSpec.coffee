@@ -31,7 +31,7 @@ describe "BaseCtrl", ->
 			$scope: scope
 			hashtags: ["#trendingTopic"]
 
-		expect(scope.hashtags).toEqual ['#trendingTopic']
+		expect(scope.hashtags).toEqual ["#trendingTopic"]
 
 	it "can inherit resolved dependencies and add new ones", inject ($controller, $rootScope) ->
 		scope = $rootScope.$new()
