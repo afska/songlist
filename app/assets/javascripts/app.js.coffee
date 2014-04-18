@@ -5,15 +5,10 @@
 		"ngCookies"
 	]
 
-	.controller("LandingCtrl", ($scope) ->
-		$scope.piola = "guacho"
-		window.debu = $scope
-	)
+app.config ($routeProvider) ->
+	$routeProvider
+		.when '/',
+			templateUrl: 'templates/landing.html'
+			controller: "LandingCtrl"
 
-	.config ($routeProvider) ->
-		$routeProvider
-			.when '/rutadeprueba',
-				templateUrl: 'templates/landing.html'
-				controller: "LandingCtrl"
-
-			.otherwise redirectTo: '/'
+		.otherwise redirectTo: '/'
