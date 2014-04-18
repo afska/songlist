@@ -6,9 +6,4 @@
 	]
 
 	.config ($routeProvider) ->
-		$routeProvider
-			.when '/',
-				templateUrl: 'templates/landing.html'
-				controller: "LandingCtrl"
-
-			.otherwise redirectTo: '/'
+		$routeProvider.otherwise redirectTo: '/'
