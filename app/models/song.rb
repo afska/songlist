@@ -38,9 +38,10 @@ class Song < Model
 	end
 
 	#TODOs:
-	# - Login with fb
-	# - Hacer autenticación en la api (con algo simple)
+	# - Testear la api
 	# - Deshardcodear el i18n y usar el config/locales/en.yml
 	# - Empezar a hacer los resources
 	# - Congelar las versiones de bower.json
+	# - Login with fb
+	# - Hacer autenticación en la api (con algo simple)
 end

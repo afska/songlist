@@ -2,9 +2,9 @@
 # Otherwise, angular won't found it or it won't inject the $scope.
 # A @s variable is created as a shortcut for $scope.
 class @BaseCtrl
-	copyAndExtend = (destination, origin) ->
-		copy = angular.copy destination or {}
-		angular.extend copy, origin or {}
+	copyAndExtend = (destination = {}, origin = {}) ->
+		copy = angular.copy destination
+		angular.extend copy, origin
 
 	# Make the controller visible for a specific route.
 	# If the route has params (id), the pattern is: "/route/:id"
