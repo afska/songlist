@@ -21,6 +21,6 @@ module Songlist
 		config.middleware.insert_before ActionDispatch::ParamsParser, "CatchJsonParseErrors"
 
 		# Add Bower components to assets pipeline
-		config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+		config.assets.paths << Rails.root.join("vendor", "assets", "components")
 	end
 end
