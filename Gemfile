@@ -46,3 +46,6 @@ gem 'mongoid', '4.0.0.beta1', github: 'mongoid/mongoid'
 group :test, :development do
   gem 'jasmine-rails'
 end
+
+# Use tools for running in production
+gem 'rails_12factor'
