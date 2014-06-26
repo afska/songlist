@@ -1,7 +1,6 @@
 class SongsCtrl extends BaseCtrl
-	@route "/songs",
+	@route "/", #"/songs"
 		templateUrl: "templates/songs"
 	@inject()
 
 	initialize: =>
-		

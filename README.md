@@ -3,7 +3,7 @@ Songlist
 
 ## Instalación y comandos
 
-Dependencias: ruby, npm
+Dependencias: ruby, npm, heroku-toolbelt
 
 ```bash
 npm install -g bower
@@ -22,3 +22,11 @@ Correr tests:
 ## Backlog
 
 https://trello.com/b/bzhRTnJn/songlist
+
+## Deploy
+
+http://song-list.herokuapp.com/
+
+```
+heroku git:remote -a song-list
+```
