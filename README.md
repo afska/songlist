@@ -1,7 +1,7 @@
 Songlist
 ========
 
-## Instalación y comandos
+## Desarrollo
 
 Dependencias: ruby, npm, heroku-toolbelt
 
