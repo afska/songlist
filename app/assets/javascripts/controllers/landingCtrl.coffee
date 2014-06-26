@@ -4,5 +4,4 @@ class LandingCtrl extends BaseCtrl
 	@inject()
 
 	initialize: =>
-		@s.piola = "guacho"
-		window.debu = @s
+		
