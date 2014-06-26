@@ -1,6 +1,8 @@
 Songlist
 ========
 
+## Instalación y comandos
+
 Dependencias: ruby, npm
 
 ```bash
@@ -16,3 +18,7 @@ Correr tests:
 `RAILS_ENV=test bundle exec rake spec:javascript`
 
 (crear un alias `rjstest`)
+
+## Backlog
+
+https://trello.com/b/bzhRTnJn/songlist

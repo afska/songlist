@@ -36,12 +36,4 @@ class Song < Model
 		self.identificator = "#{self.genre}-#{self.author}-#{self.title}"
 		self.submitted_at = DateTime.now
 	end
-
-	#TODOs:
-	# - Testear la api
-	# - Deshardcodear el i18n y usar el config/locales/en.yml
-	# - Empezar a hacer los resources
-	# - Congelar las versiones de bower.json
-	# - Login with fb
-	# - Hacer autenticación en la api (con algo simple)
 end
