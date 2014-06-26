@@ -1,10 +1,12 @@
 # Generates errors in JSON from exceptions
 module ExceptionFilter
+	extend ActiveSupport::Concern
+
 	def catch_exceptions
 		yield
 	rescue ActionController::ParameterMissing
 		errors! [
-			{ json: [ "is missing" ] }
+			{ json: [ "is missin2g" ] }
 		]
 	rescue Mongoid::Errors::DocumentNotFound
 		errors! [

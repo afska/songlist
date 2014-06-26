@@ -1,5 +1,3 @@
-require_rel "filters"
-
 # Generic controller for a REST Api
 class ApiController < ActionController::Base
 	include ExceptionFilter

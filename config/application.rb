@@ -10,6 +10,13 @@ Bundler.require(:default, Rails.env)
 
 module Songlist
 	class Application < Rails::Application
+		#Include all folders to AutoLoad
+		Dir["#{config.root}/app/**/*"]
+			.select { |f| File.directory? f }
+			.each do |path|
+				config.autoload_paths += [path]
+			end
+
 		# Add Middleware to catch JSON parse errors
 		config.middleware.insert_before ActionDispatch::ParamsParser, "CatchJsonParseErrors"
 

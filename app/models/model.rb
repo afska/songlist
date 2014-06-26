@@ -1,6 +1,3 @@
-require_rel "dtos"
-require_rel "exceptions"
-
 # A model that will be persisted in the db
 class Model
 	include ActiveModel::Validations
@@ -14,4 +11,4 @@ class Model
 			raise ValidationException.new(self.errors.messages)
 		end
 	end
-end 
+end
