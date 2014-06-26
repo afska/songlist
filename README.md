@@ -10,8 +10,9 @@ bundle
 ```
 
 Correr servidor:
-`rails start`
+`rails server`
 
 Correr tests:
 `RAILS_ENV=test bundle exec rake spec:javascript`
+
 (crear un alias `rjstest`)
