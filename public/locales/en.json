@@ -1,3 +1,6 @@
 {
-	"key": "value"
+	"songlist": "Songlist",
+
+	"landing.makeYourOwnList": "¡Make your own song list fastly!",
+	"landing.start": "Start"
 }
