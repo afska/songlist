@@ -6,7 +6,7 @@ module ExceptionFilter
 		yield
 	rescue ActionController::ParameterMissing
 		errors! [
-			{ json: [ "is missin2g" ] }
+			{ json: [ "is missing" ] }
 		]
 	rescue Mongoid::Errors::DocumentNotFound
 		errors! [
