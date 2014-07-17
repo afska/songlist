@@ -1,0 +1,17 @@
+.lists-container {
+	width: 100%;
+}
+
+.list-header {
+	background: rgb(236, 236, 236) !important;
+}
+
+.list-title {
+	font-weight: bold;
+}
+
+.primary { }
+
+.secondary {
+	font-style: italic;
+}
