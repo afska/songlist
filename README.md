@@ -22,8 +22,10 @@ bundle install
 ```
 
 ## Servidor
-`rails s`
-`RAILS_ENV=production rails s`
+```bash
+rails s
+RAILS_ENV=production rails s
+```
 
 ## Tests
 `RAILS_ENV=test bundle exec rake spec:javascript`
