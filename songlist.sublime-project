@@ -4,7 +4,7 @@
 			"follow_symlinks": true,
 			"path": ".",
 			"folder_exclude_patterns": [".*", "bin", "tmp", "log", "lib", "vendor/assets/components"],
-			"file_exclude_patterns": [".*", "songlist.sublime-workspace"]
+			"file_exclude_patterns": [".*", "*.sublime-workspace"]
 		}
 	],
 	"settings": {

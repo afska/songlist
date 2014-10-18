@@ -1,0 +1,6 @@
+{
+	"dependencies": {
+		"bower": "lastest",
+		"phantomjs": "lastest"
+	}
+}

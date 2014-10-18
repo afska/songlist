@@ -3,12 +3,12 @@ Songlist
 
 ## Desarrollo
 
-Dependencias: ruby, npm, heroku-toolbelt
+Dependencias: ruby/bundler/rake, npm
 
 ```bash
-npm install -g bower
-npm install -g phantomjs
-bundle
+npm install
+bower install
+bundle install
 ```
 
 Correr servidor:
@@ -16,8 +16,6 @@ Correr servidor:
 
 Correr tests:
 `RAILS_ENV=test bundle exec rake spec:javascript`
-
-(crear un alias `rjstest`)
 
 ## Backlog
 
@@ -27,6 +25,7 @@ https://trello.com/b/bzhRTnJn/songlist
 
 http://song-list.herokuapp.com/
 
-```
+```bash
+#instalar heroku-toolbelt
 heroku git:remote -a song-list
 ```
