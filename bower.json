@@ -1,6 +1,4 @@
 {
-  "name": "songlist",
-  "version": "1.0.0",
   "dependencies": {
     "bootstrap": "*",
     "lodash": "*",
