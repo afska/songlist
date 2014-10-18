@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.1.1"
+ruby "2.1.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
@@ -27,25 +27,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-gem 'debugger', group: [:development, :test]
-
 # Use MongoDb as the DB for the models
 gem 'mongoid', '4.0.0.beta1', github: 'mongoid/mongoid'
 
 # Use Jasmine for JS unit tests
-group :test, :development do
-  gem 'jasmine-rails'
-end
+gem 'jasmine-rails', group: [:development, :test]
 
 # Use tools for running in production
 gem 'rails_12factor'

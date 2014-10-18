@@ -12,10 +12,13 @@ bundle install
 ```
 
 Correr servidor:
-`rails server`
+`rails s`
 
 Correr tests:
 `RAILS_ENV=test bundle exec rake spec:javascript`
+o...
+`ir a /specs en el browser`
+
 
 ## Backlog
 
