@@ -16,7 +16,6 @@ npm install -g phantomjs
 ```
 
 ```bash
-npm install
 bower install
 bundle install
 ```
