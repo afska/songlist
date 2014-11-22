@@ -29,7 +29,6 @@ npm install -g bower
 ```
 
 ## Install
-
 ```bash
 bower install
 bundle install
@@ -42,11 +41,10 @@ rvmsudo RAILS_ENV=production rails s -p 80 #production
 ```
 
 ## Tests
-`RAILS_ENV=test bundle exec rake spec:javascript`
-
-o...
-`go to /specs in the browser`
-
+```bash
+RAILS_ENV=test bundle exec rake spec:javascript
+#or go to /specs in the browser...
+```
 
 ## Backlog
 https://trello.com/b/bzhRTnJn/songlist
