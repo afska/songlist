@@ -6,11 +6,18 @@ class @BaseCtrl
 		copy = angular.copy destination
 		angular.extend copy, origin
 
-	# Make the controller visible for a specific route.
+	# Register the controller with Angular
+	@register: ->
+		name = @name || @toString().match(/function\s*(.*?)\(/)?[1]
+		app.controller name, @
+
+		name
+
+	# Register the controller and assign it a specific route.
 	# If the route has params (id), the pattern is: "/route/:id"
 	@route: (path, route) ->
 		base =
-			controller: @_register()
+			controller: @register()
 			resolve: @ctrlResolve
 
 		app.config ($routeProvider) ->
@@ -18,7 +25,7 @@ class @BaseCtrl
 
 	# Add dependencies (promises) that must be resolved before instantiation.
 	# This dependencies will be injected in the $scope.
-	# The route params can be accesed with: $route.current.params.id
+	# The route params (id) can be accesed with: $route.current.params.id
 	@resolve: (resolve) ->
 		@ctrlResolve = copyAndExtend @ctrlResolve, resolve
 
@@ -36,12 +43,6 @@ class @BaseCtrl
 	# Get an entity by id
 	@getById: (id, resource, modelClass) ->
 		new Home(resource, modelClass).getById id
-
-	@_register: ->
-		name = @name || @toString().match(/function\s*(.*?)\(/)?[1]
-		app.controller name, @
-
-		name
 
 	constructor: (args...) ->
 		for key, index in @constructor.$inject
