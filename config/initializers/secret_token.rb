@@ -7,4 +7,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Songlist::Application.config.secret_key_base = 'b9850fd90998d58857891ab1fb6ff2256b78619199c3c70a58c5750341d470e0685e20303ca667fe972118c88bdc4772e886dbfa660e2caeb9ec52c73183fa7a'
+WebApp::Application.config.secret_key_base = 'b9850fd90998d58857891ab1fb6ff2256b78619199c3c70a58c5750341d470e0685e20303ca667fe972118c88bdc4772e886dbfa660e2caeb9ec52c73183fa7a'

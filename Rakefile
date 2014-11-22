@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Songlist::Application.load_tasks
+WebApp::Application.load_tasks
