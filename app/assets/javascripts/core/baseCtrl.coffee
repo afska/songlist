@@ -36,14 +36,6 @@ class @BaseCtrl
 			.uniq()
 			.value()
 
-	# Get all the entities of a resource
-	@getAll: (resource, modelClass) ->
-		new Home(resource, modelClass).get()
-
-	# Get an entity by id
-	@getById: (id, resource, modelClass) ->
-		new Home(resource, modelClass).getById id
-
 	constructor: (args...) ->
 		for key, index in @constructor.$inject
 			@[key] = args[index]
