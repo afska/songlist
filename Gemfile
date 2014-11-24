@@ -24,3 +24,6 @@ gem 'jasmine-rails', group: [:development, :test]
 
 # Use tools for running in production
 gem 'rails_12factor'
+
+# Tool for encrypt strings with password
+gem 'encrypted_strings', '~> 0.3.3'

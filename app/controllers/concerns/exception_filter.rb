@@ -4,6 +4,8 @@ module ExceptionFilter
 
 	def catch_exceptions
 		yield
+	rescue UnauthorizedLogin, OpenSSL::Cipher::CipherError
+		unauthorized!
 	rescue ActionController::ParameterMissing
 		errors! [
 			{ json: [ "is missing" ] }

@@ -1,31 +1,31 @@
 # Handles the CRUD operations with Songs
-class SongsController < ApiController
+class SongsController < ApiAuthController
 	def index
 		songs = Song.all
-		json! songs.map { |s| transform(s) }, :ok
+		ok! songs.map { |s| transform(s) }
 	end
 
 	def get
 		song = Song.find id
-		json! transform(song), :ok
+		ok! transform(song)
 	end
 
 	def create
 		song = Song.create body_song
 		song.validate
-		json! transform(song), :created
+		created! transform(song)
 	end
 
 	def update
 		song = Song.find id
 		song.update_attributes body_song
 		song.validate
-		json! transform(song), :ok
+		ok! transform(song)
 	end
 
 	def delete
 		Song.find(id).remove
-		json! "", :ok
+		ok!
 	end
 
 	#------

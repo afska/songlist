@@ -5,18 +5,30 @@ class ApiController < ActionController::Base
 	rescue_from Exception do |e| catch_unhandled_errors(e) end
 		
 	protect_from_forgery with: :null_session
-	skip_before_filter :verify_authenticity_token
 
 	#--------
 	protected
 	#--------
 
-	def json!(json, code)
-		render json: json, status: code
+	def method_missing(method_name, *args)
+		method_name = method_name.to_s
+
+		if method_name.ends_with? "!"
+			json = args.first || ""
+			status = method_name.sub("!", "").to_sym
+			json! json, status
+		else
+			param = method_name.to_sym
+			params[param]
+		end
 	end
 
-	def id
-		params[:id]
+	#------
+	private
+	#------
+
+	def json!(json, code)
+		render json: json, status: code
 	end
 
 	def transform(model)

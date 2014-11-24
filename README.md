@@ -32,6 +32,7 @@ npm install -g bower
 ```bash
 bower install
 bundle install
+bundle exec rake db:mongoid:create_indexes
 ```
 
 ## Server

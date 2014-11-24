@@ -47,6 +47,7 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     connection_pool (1.2.0)
+    encrypted_strings (0.3.3)
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
@@ -125,6 +126,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  encrypted_strings (~> 0.3.3)
   jasmine-rails
   mongoid (= 4.0.0.beta1)!
   rails (= 4.0.3)
