@@ -4,8 +4,8 @@ app.factory "Home", ($http) ->
 		constructor: (name) ->
 			@url = "api/#{name}"
 
-		get: (id) -> $http.get @url
+		get: -> $http.get @url
 		getById: (id) -> $http.get @url + "/#{id}"
 		post: (json) -> $http.post @url, json
-		put: (json) -> $http.put @url, json
+		put: (id, json) -> $http.put @url + "/#{id}", json
 		delete: (id) -> $http.delete @url + "/#{id}"

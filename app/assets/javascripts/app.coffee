@@ -9,8 +9,8 @@
 
 	# Loading stuff:
 	.run ($rootScope) ->
-		$rootScope.$on '$routeChangeStart', -> $rootScope.isWaiting = true
-		$rootScope.$on '$routeChangeSuccess', -> $rootScope.isWaiting = false
+		$rootScope.$on '$routeChangeStart', => $rootScope.isLoading = true
+		$rootScope.$on '$routeChangeSuccess', => $rootScope.isLoading = false
 
 	# i18n stuff:
 	.config ($translateProvider) ->

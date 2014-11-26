@@ -14,4 +14,4 @@ beforeEach ->
 					"Expected #{elem.property} to be #{JSON.stringify elem.expected}, but found #{JSON.stringify elem.actual}."
 
 				pass: false
-				message: nonEqualProperties.reduce ((acum, elem) -> acum += makeErrorMessage elem), ""
+				message: nonEqualProperties.map(makeErrorMessage).join " "

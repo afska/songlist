@@ -1,5 +1,4 @@
-<div class="container">
-	<!-- Static navbar -->
+<div class="container" ng-controller="HeaderCtrl">
 	<div class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -23,7 +22,7 @@
 						<img ng-show="isLoading" class="navbar-brand" src="assets/loading.gif" alt="loading">
 					</li>
 				</ul>
-				<ul ng-show="true" class="nav navbar-nav navbar-right">
+				<ul ng-show="!isActive('/')" class="nav navbar-nav navbar-right">
 					<li>
 						<a ng-click="logout()" class="glyphicon glyphicon-off" href="javascript:;"></a>
 					</li>

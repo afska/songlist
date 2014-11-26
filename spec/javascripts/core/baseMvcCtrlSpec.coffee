@@ -1,25 +1,14 @@
 #= require testDependencies
 
-class TweetsCtrl extends BaseCtrl
-	@resolve hashtags: ->
-	@route "/tweets", templateUrl: "templates/tweets"
+class AccountCtrl extends BaseMvcCtrl
+	@register()
 	@inject()
 
-class UserTweetsCtrl extends TweetsCtrl
-	@resolve followers: ->
-	@route "/tweets/me", templateUrl: "templates/user-tweets"
-	@inject()
-
-describe "BaseCtrl", ->
-	it "should register the controller's route on Angular", inject ($route) ->
-		expect($route.routes["/tweets"]).toHaveProperties
-			templateUrl: "templates/tweets"
-			controller: "TweetsCtrl"
-
+describe "BaseMvcCtrl", ->
 	it "should set references to the resolved dependencies in the scope", inject ($controller, $rootScope) ->
 		scope = $rootScope.$new()
 
-		ctrl = $controller "TweetsCtrl",
+		ctrl = $controller "AccountCtrl",
 			$scope: scope
 			hashtags: ["#trendingTopic"]
 
