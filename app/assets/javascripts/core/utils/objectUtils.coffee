@@ -13,5 +13,6 @@
 		args = Array::slice.call arguments
 		_[functionName].apply @, [@].concat args
 
+# Capitalizes the first letter of the string
 String::capitalize = ->
 	@charAt(0).toUpperCase() + this.slice(1)

@@ -7,7 +7,7 @@ describe "HeaderCtrl", ->
 	beforeEach ->
 		inject ($controller, $rootScope, $location) ->
 			scope = $rootScope.$new()
-			ctrl = $controller 'HeaderCtrl', $scope: scope
+			ctrl = $controller "HeaderCtrl", $scope: scope
 
 			$location.path "/current"
 

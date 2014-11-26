@@ -5,22 +5,31 @@ class AccountCtrl extends BaseMvcCtrl
 	@inject()
 
 describe "BaseMvcCtrl", ->
-	it "should set references to the resolved dependencies in the scope", inject ($controller, $rootScope) ->
-		scope = $rootScope.$new()
+	ctrl = null
+	scope = null
 
-		ctrl = $controller "AccountCtrl",
-			$scope: scope
-			hashtags: ["#trendingTopic"]
+	beforeEach ->
+		inject ($controller, $rootScope) ->
+			scope = $rootScope.$new()
+			ctrl = $controller "AccountCtrl", $scope: scope
 
-		expect(scope.hashtags).toEqual ["#trendingTopic"]
+	it "can start and stop loading by a promise", inject ($q) ->
+		deferred = $q.defer()
 
-	it "can inherit resolved dependencies and add new ones", inject ($controller, $rootScope) ->
-		scope = $rootScope.$new()
+		ctrl.load deferred.promise
+		expect(scope.isLoading).toBeTruthy()
+		deferred.resolve() ; scope.$apply()
+		expect(scope.isLoading).toBeFalsy()
 
-		ctrl = $controller "UserTweetsCtrl",
-			$scope: scope
-			hashtags: ["#trendingTopic"]
-			followers: ["@anotheruser"]
+	it "can set a notification into the scope", ->
+		ctrl.setNotification "an-error-has-ocurred"
+		expect(scope.notification).toEqual "an-error-has-ocurred"
 
-		expect(scope.hashtags).toEqual ["#trendingTopic"]
-		expect(scope.followers).toEqual ["@anotheruser"]
+	it "can unset the notification from the scope", ->
+		ctrl.setNotification()
+		expect(scope.notification).toBeUndefined()
+
+
+	it "can raise a focus event", (done) ->
+		scope.$on "focus", done
+		ctrl.focus()
