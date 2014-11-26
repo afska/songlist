@@ -1,5 +1,5 @@
-class SongsCtrl extends BaseCtrl
-	@route "/", #"/songs"
+class SongsCtrl extends BaseMvcCtrl
+	@route "/songs",
 		templateUrl: "templates/songs"
 	@inject()
 

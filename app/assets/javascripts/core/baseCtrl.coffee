@@ -36,6 +36,7 @@ class @BaseCtrl
 			.uniq()
 			.value()
 
+	# Never define a constructor method. Use initialize instead.
 	constructor: (args...) ->
 		for key, index in @constructor.$inject
 			@[key] = args[index]

@@ -1,9 +1,11 @@
 {
 	"songlist": "Songlist",
 
-	"header.logout": "Cerrar sesión",
 	"header.order": "Ordenar",
 
-	"landing.makeYourOwnList": "¡Armá tu propia lista de canciones rápidamente!",
-	"landing.start": "Empezar"
+	"login.signInToContinue": "Iniciá sesión para continuar",
+	"login.signIn": "Iniciar sesión",
+	"login.username": "Nombre de usuario",
+	"login.password": "Contraseña",
+	"login.error": "El usuario no existe o la contraseña es incorrecta"
 }

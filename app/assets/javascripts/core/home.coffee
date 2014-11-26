@@ -1,13 +1,11 @@
-# A Home for getting a Resource.
-class @Home
-	constructor: (@resource) ->
+# A Home for a REST resource
+app.factory "Home", ($http) ->
+	class Home
+		constructor: (name) ->
+			@url = "api/#{name}"
 
-	# Get all
-	get: =>
-		@_promise @resource.query()
-
-	# Get one by id
-	getById: (id) =>
-		@_promise @resource.get(id: id)
-
-	_promise: (resource) => resource.$promise
+		get: (id) -> $http.get @url
+		getById: (id) -> $http.get @url + "/#{id}"
+		post: (json) -> $http.post @url, json
+		put: (json) -> $http.put @url, json
+		delete: (id) -> $http.delete @url + "/#{id}"
