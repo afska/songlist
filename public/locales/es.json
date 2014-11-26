@@ -1,6 +1,9 @@
 {
 	"songlist": "Songlist",
 
+	"header.logout": "Cerrar sesión",
+	"header.order": "Ordenar",
+
 	"landing.makeYourOwnList": "¡Armá tu propia lista de canciones rápidamente!",
 	"landing.start": "Empezar"
 }

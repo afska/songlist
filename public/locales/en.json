@@ -1,6 +1,9 @@
 {
 	"songlist": "Songlist",
 
+	"header.logout": "Logout",
+	"header.order": "Order",
+	
 	"landing.makeYourOwnList": "¡Make your own song list fastly!",
 	"landing.start": "Start"
 }
