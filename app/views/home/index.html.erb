@@ -6,7 +6,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="dropdown">
+					<li ng-show="!isActive('/')" class="dropdown" >
 						<a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown">{{ 'header.order' | translate }} <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">Action</a></li>
