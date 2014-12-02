@@ -20,3 +20,17 @@
 	# Routes stuff:
 	.config ($routeProvider) ->
 		$routeProvider.otherwise redirectTo: "/"
+
+	#Auth stuff:
+	.run ($rootScope, $cookies, $timeout, $location, $http) ->
+		$rootScope.goTo = (path) ->
+			goToRoute = => $location.path path
+			$timeout goToRoute, 0
+
+		$rootScope.$on "$routeChangeStart", (event, next) ->
+			auth = $cookies.auth
+			if not auth then $rootScope.goTo "/" ; return
+			
+			auth = JSON.parse auth
+			$http.defaults.headers.common["Authorization"] = "Token token=#{auth.token}"
+			$rootScope.goTo "/songs"

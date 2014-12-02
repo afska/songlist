@@ -11,6 +11,5 @@ class LandingCtrl extends BaseMvcCtrl
 		).finally @focus
 
 	createCookieAndRedirect: (data) =>
-		alert "re piola!"
-		#@$cookies.auth = JSON.stringify data
-		#@s.goTo "/route"
+		@$cookies.auth = JSON.stringify data
+		@s.goTo "/start"

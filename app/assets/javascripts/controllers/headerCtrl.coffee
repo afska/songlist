@@ -4,3 +4,7 @@ class HeaderCtrl extends BaseCtrl
 
 	isActive: (viewLocation) =>
 		viewLocation is @$location.path()
+
+	logout: =>
+		delete @$cookies.auth
+		@s.goTo "/"

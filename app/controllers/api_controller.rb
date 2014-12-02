@@ -10,6 +10,7 @@ class ApiController < ActionController::Base
 	protected
 	#--------
 
+	# Allows methods like "bad_request!" or properties like "id"
 	def method_missing(method_name, *args)
 		method_name = method_name.to_s
 
