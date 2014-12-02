@@ -49,3 +49,9 @@ describe "Home", ->
 	it "can delete a specific entity", inject ($httpBackend, Home) ->
 		expectStatus new Home("dogs").delete(2), 200
 		$httpBackend.flush()
+
+	it "provides a helper to get the data", inject ($httpBackend, Home) ->
+		new Home("dogs").getById(2)
+			.data().then (dog) -> dog.id is 2
+
+		$httpBackend.flush()
