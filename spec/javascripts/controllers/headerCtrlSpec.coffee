@@ -22,3 +22,12 @@ describe "HeaderCtrl", ->
 	it "can tell if one route is the current route", ->
 		expect(ctrl.isActive("/current")).toBeTruthy()
 		expect(ctrl.isActive("/another")).toBeFalsy()
+
+	it "can tell if one route is the current route", ->
+		expect(ctrl.isActive("/current")).toBeTruthy()
+		expect(ctrl.isActive("/another")).toBeFalsy()
+
+	it "deletes the auth cookie on logout", inject ($cookies) ->
+		$cookies.auth = token: "a_secret_token"
+		ctrl.logout()
+		expect($cookies.auth).toBeUndefined()
