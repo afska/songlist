@@ -2,11 +2,11 @@ development:
     adapter: mongoid
     sessions:
         default:
-            database: songlist
+            database: <%= ENV["MONGOLAB_DATABASE"] %>
             hosts:
-                - ds033639.mongolab.com:33639
-            username: "songlist"
-            password: "papapasa"
+                - <%= ENV["MONGOLAB_URI"] %>
+            username: <%= ENV["MONGOLAB_USERNAME"] %>
+            password: <%= ENV["MONGOLAB_PASSWORD"] %>
             options:
                 # Change the default write concern. (default = { w: 1 })
                 # write:
@@ -57,8 +57,8 @@ production:
     adapter: mongoid
     sessions:
         default:
-            database: songlist
+            database: <%= ENV["MONGOLAB_DATABASE"] %>
             hosts:
-                - ds033639.mongolab.com:33639
-            username: "songlist"
-            password: "papapasa"
+                - <%= ENV["MONGOLAB_URI"] %>
+            username: <%= ENV["MONGOLAB_USERNAME"] %>
+            password: <%= ENV["MONGOLAB_PASSWORD"] %>
