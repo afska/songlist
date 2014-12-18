@@ -1,6 +1,5 @@
-.full {
-	width: 100%;
-}
+.half { width: 50%; }
+.full {	width: 100%; }
 
 .list-tab {
 	vertical-align: top;

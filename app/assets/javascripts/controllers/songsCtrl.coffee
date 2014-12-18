@@ -18,14 +18,22 @@ class SongsCtrl extends BaseMvcCtrl
 			.sortBy ["author", "title"]
 			.groupBy "genre"
 
-	add: =>
+	create: =>
 		@loadAndFocus (
 			@SongsHome
 				.post @s.song
 				.data()
+				.then @_create
+		)
+
+	edit: =>
+		@loadAndFocus (
+			@SongsHome
+				.put @s.song._id, @s.song
+				.data()
 				.then (s) =>
-					@s.songs.push s
-					@clean()
+					@_remove @s.song.editing
+					@_create s
 		)
 
 	delete: (song) =>
@@ -34,18 +42,26 @@ class SongsCtrl extends BaseMvcCtrl
 		@loadAndFocus (
 			@SongsHome
 				.delete song._id
-				.then (s) =>
-					@s.songs.remove (it) => it is song
+				.then => @_remove song
 		)
 
-	edit: (song) =>
+	startEditing: (song) =>
 		if @isLoading then return
-		
-		alert "OMG"
+
+		@s.song = _.clone song
+		@s.song.editing = song
+		@focus()
 
 	clean: =>
 		@s.song = {}
+		@focus()
 
+	_create: (song) =>
+		@s.songs.push song
+		@clean()
+
+	_remove: (song) =>
+		@s.songs.remove (it) => it is song
 
 	_allThe: (x) =>
 		@s.songs

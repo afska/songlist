@@ -1,55 +1,3 @@
-<!--<div class="text-center">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-md-4 col-md-offset-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<strong>{{ 'login.signInToContinue' | translate }}</strong>
-					</div>
-					<div class="panel-body">
-						<form role="form" action="javascript:;" method="post">
-							<fieldset>
-								<div class="row">
-									<div class="col-sm-12 col-md-10 col-md-offset-1">
-
-										<div class="form-group">
-											<div class="input-group">
-												<span class="input-group-addon">
-													<i class="glyphicon glyphicon-user"></i>
-												</span> 
-												<input ng-model="credentials.username" ng-disabled="isLoading" class="form-control" placeholder="{{ 'login.username' | translate }}" type="text" autofocus focus-on="focus" maxlength="30">
-											</div>
-										</div>
-
-										<div class="form-group">
-											<div class="input-group">
-												<span class="input-group-addon">
-													<i class="glyphicon glyphicon-lock"></i>
-												</span>
-												<input ng-model="credentials.password" ng-disabled="isLoading" class="form-control" placeholder="{{ 'login.password' | translate }}" type="password" value="" maxlength="30">
-											</div>
-										</div>
-
-										<div class="form-group">
-											<input ng-click="login()" ng-disabled="isLoading" type="submit" class="btn btn-lg btn-primary btn-block" value="{{ 'login.signIn' | translate }}">
-										</div>
-
-										<div ng-show="notification" class="alert alert-danger">
-											<a ng-click="setNotification()" href="javascript:;" class="close">&times;</a>
-											{{ "login.error" | translate }}
-										</div>
-
-									</div>
-								</div>
-							</fieldset>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>-->
-
 <div class="text-center songlist">
 	<form role="form" action="javascript:;" method="post">
 		<fieldset>
@@ -67,7 +15,13 @@
 				</div>
 
 				<div class="col-md-3">
-					<button ng-click="add()" ng-disabled="isLoading" class="btn btn-primary full" type="submit"><i class="glyphicon glyphicon-music"></i> <i class="glyphicon glyphicon-share"></i></input>
+					<span ng-if="!song.editing">
+						<button ng-click="create()" ng-disabled="isLoading" class="btn btn-primary full" type="submit"><i class="glyphicon glyphicon-music"></i> <i class="glyphicon glyphicon-share"></i></input></button>
+					</span>
+					<span ng-if="song.editing">
+						<button ng-click="edit()" ng-disabled="isLoading" class="btn btn-primary half" type="submit"><i class="glyphicon glyphicon-save"></i></input>
+						<button ng-click="clean()" ng-disabled="isLoading" class="btn btn-primary half" type="submit"><i class="glyphicon glyphicon-remove"></i></input></button>
+					</span>
 				</div>
 			</div>
 		</fieldset>
@@ -90,7 +44,7 @@
 									<span class="secondary">{{ song.author }}</span>
 								</td>
 								<td class="icons">
-									<a ng-click="edit(song)" href="javascript:;"><i class="glyphicon glyphicon-edit"></i></a>
+									<a ng-click="startEditing(song)" href="javascript:;"><i class="glyphicon glyphicon-edit"></i></a>
 									<a ng-click="delete (song)" href="javascript:;"><i class="glyphicon glyphicon-fire"></i></a>
 								</td>
 							</tr>
