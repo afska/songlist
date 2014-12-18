@@ -6,9 +6,6 @@ class SongsCtrl extends BaseMvcCtrl
 
 	@inject "SongsHome"
 
-	initialize: =>
-		window.debu = @
-
 	authors: => @_allThe "author"
 
 	genres: => @_allThe "genre"
