@@ -82,13 +82,19 @@
 					<li class="list-group-item list-header">
 						<span class="list-title">{{ genre }}</span>
 					</li>
-					<li ng-repeat="song in byGenre()[genre]" class="list-group-item">
-						<span class="primary">{{ song.title }}</span> - 
-						<span class="secondary">{{ song.author }}</span>
-						<span class="icons">
-							<a ng-click="edit(song)" href="javascript:;"><i class="glyphicon glyphicon-edit"></i></a>
-							<a ng-click="delete (song)" href="javascript:;"><i class="glyphicon glyphicon-fire"></i></a>
-						</span>
+					<li ng-repeat="song in byGenre()[genre]" class="list-group-item text-left">
+						<table class="full">
+							<tr>
+								<td>
+									<span class="primary">{{ song.title }}</span> - 
+									<span class="secondary">{{ song.author }}</span>
+								</td>
+								<td class="icons">
+									<a ng-click="edit(song)" href="javascript:;"><i class="glyphicon glyphicon-edit"></i></a>
+									<a ng-click="delete (song)" href="javascript:;"><i class="glyphicon glyphicon-fire"></i></a>
+								</td>
+							</tr>
+						</table>
 					</li>
 				</ul>
 			</td>
