@@ -22,5 +22,25 @@ class SongsCtrl extends BaseMvcCtrl
 			@SongsHome
 				.post @s.song
 				.data()
-				.then (s) => @s.songs.push s
+				.then (s) =>
+					@s.songs.push s
+					@clean()
 		)
+
+	delete: (song) =>
+		if @isLoading then return
+
+		@loadAndFocus (
+			@SongsHome
+				.delete song._id
+				.then (s) =>
+					@s.songs.remove (it) => it is song
+		)
+
+	edit: (song) =>
+		if @isLoading then return
+		
+		alert "OMG"
+
+	clean: =>
+		@s.song = {}

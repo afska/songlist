@@ -55,15 +55,15 @@
 		<fieldset>
 			<div class="row">
 				<div class="col-md-3">
-					<input ng-model="song.title" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.title' | translate }}" maxlength="80" autofocus focus-on="focus">
+					<input ng-model="song.title" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.title' | translate }}..." maxlength="80" autofocus focus-on="focus">
 				</div>
 
 				<div class="col-md-3">
-					<input ng-model="song.author" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.author' | translate }}" maxlength="50">
+					<input ng-model="song.author" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.author' | translate }}..." maxlength="50">
 				</div>
 
 				<div class="col-md-3">
-					<input ng-model="song.genre" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.genre' | translate }}" maxlength="30">
+					<input ng-model="song.genre" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.genre' | translate }}..." maxlength="30">
 				</div>
 
 				<div class="col-md-3">
@@ -86,8 +86,8 @@
 						<span class="primary">{{ song.title }}</span> - 
 						<span class="secondary">{{ song.author }}</span>
 						<span class="icons">
-							<i class="glyphicon glyphicon-edit"></i>
-							<i class="glyphicon glyphicon-fire"></i>
+							<a ng-click="edit(song)" href="javascript:;"><i class="glyphicon glyphicon-edit"></i></a>
+							<a ng-click="delete (song)" href="javascript:;"><i class="glyphicon glyphicon-fire"></i></a>
 						</span>
 					</li>
 				</ul>
