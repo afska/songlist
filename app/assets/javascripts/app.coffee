@@ -5,6 +5,7 @@
 		"ngResource"
 		"ngCookies"
 		"pascalprecht.translate"
+		"ui.bootstrap"
 	]
 
 	# Loading stuff:

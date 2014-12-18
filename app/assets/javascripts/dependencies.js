@@ -7,8 +7,7 @@
 //= require angular-cookies/angular-cookies
 //= require angular-translate/angular-translate
 //= require angular-translate-loader-url/angular-translate-loader-url
-//= require angular-facebook/lib/angular-facebook
-
+//= require angular-bootstrap/ui-bootstrap-tpls
 //= require ./app
 //= require_tree ./core
 //= require_tree .

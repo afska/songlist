@@ -9,8 +9,9 @@ class SongsCtrl extends BaseMvcCtrl
 	initialize: =>
 		window.debu = @
 
-	genres: =>
-		_.keys(@byGenre()).sort()
+	authors: => @_allThe "author"
+
+	genres: => @_allThe "genre"
 
 	byGenre: =>
 		@s.songs
@@ -44,3 +45,10 @@ class SongsCtrl extends BaseMvcCtrl
 
 	clean: =>
 		@s.song = {}
+
+
+	_allThe: (x) =>
+		@s.songs
+			.mapBy x
+			.uniq()
+			.sort()

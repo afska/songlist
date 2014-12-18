@@ -13,6 +13,10 @@
 		args = Array::slice.call arguments
 		_[functionName].apply @, [@].concat args
 
+#
+Array::mapBy = (property) ->
+	@map (o) -> o[property]
+
 # Capitalizes the first letter of the string
 String::capitalize = ->
 	@charAt(0).toUpperCase() + this.slice(1)

@@ -12,6 +12,6 @@
     "angular-cookies": "*",
     "angular-translate": "*",
     "angular-translate-loader-url": "*",
-    "angular-facebook": "*"
+    "angular-bootstrap": "*"
   }
 }

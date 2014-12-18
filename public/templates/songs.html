@@ -59,11 +59,11 @@
 				</div>
 
 				<div class="col-md-3">
-					<input ng-model="song.author" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.author' | translate }}..." maxlength="50">
+					<input ng-model="song.author" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.author' | translate }}..." maxlength="50" typeahead="author for author in authors() | filter: $viewValue | limitTo: 5">
 				</div>
 
 				<div class="col-md-3">
-					<input ng-model="song.genre" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.genre' | translate }}..." maxlength="30">
+					<input ng-model="song.genre" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.genre' | translate }}..." maxlength="30" typeahead="genre for genre in genres() | filter: $viewValue | limitTo: 5">
 				</div>
 
 				<div class="col-md-3">
