@@ -3,8 +3,8 @@ WebApp::Application.routes.draw do
 	
 	scope "api", defaults: {format: :json} do
 		post "login", to: "users#login"
-		post "users", to: "users#register"
-		put "users", to: "users#change_password"
+		#post "users", to: "users#register"
+		#put "users", to: "users#change_password"
 
 		get "songs", to: "songs#index"
 		get "songs/:id", to: "songs#get"

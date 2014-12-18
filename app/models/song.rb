@@ -8,7 +8,6 @@ class Song < Model
 	field :author, type: String
 	field :genre, type: String
 	field :submitted_at, type: DateTime
-	field :user, type: String
 
 	validates_presence_of :title
 	validates_presence_of :author
