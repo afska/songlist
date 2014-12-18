@@ -29,6 +29,14 @@
 	width: 35px;
 }
 
-.margin-bottom { margin-bottom: 3px; }
+.search {
+	background-color: #ECECEC;
+}
 
-.container-outer { overflow: scroll; overflow-y: hidden; }
+.margin-bottom {
+	margin-bottom: 3px;
+}
+
+.container-outer { 
+	overflow: scroll; overflow-y: hidden;
+}
