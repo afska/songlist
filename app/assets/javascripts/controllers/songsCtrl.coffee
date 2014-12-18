@@ -31,6 +31,9 @@ class SongsCtrl extends BaseMvcCtrl
 		)
 
 	edit: =>
+		if @s.searchText isnt ""
+			@initialize() ; return
+			
 		@loadAndFocus (
 			@SongsHome
 				.put @s.song._id, @s.song
@@ -49,6 +52,13 @@ class SongsCtrl extends BaseMvcCtrl
 				.then => @_remove song
 		)
 
+	startEditing: (song) =>
+		if @isLoading then return
+
+		@s.song = _.clone song
+		@s.song.editing = song
+		@focus()
+
 	hasAnySong: (genre) =>
 		@s.songs.find (song) =>
 			song.genre is genre and @matchFilter(song)
@@ -56,13 +66,6 @@ class SongsCtrl extends BaseMvcCtrl
 	matchFilter: (song) =>
 		searchExp = new RegExp(".*#{@s.searchText}.*", "gi")
 		searchExp.test "#{song.title} - #{song.author}"
-
-	startEditing: (song) =>
-		if @isLoading then return
-
-		@s.song = _.clone song
-		@s.song.editing = song
-		@focus()
 
 	clean: =>
 		@s.song = {}
