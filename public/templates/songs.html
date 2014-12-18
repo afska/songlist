@@ -1,6 +1,11 @@
 <div class="text-center songlist">
 	<form role="form" action="javascript:;" method="post">
 		<fieldset>
+			<div class="row margin-bottom">
+				<div class="col-md-6">
+					<input ng-model="searchText" ng-disabled="isLoading" class="form-control" placeholder="{{ 'search' | translate }}..." maxlength="80">
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-md-3">
 					<input ng-model="song.title" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.title' | translate }}..." maxlength="80" autofocus focus-on="focus">
@@ -32,12 +37,12 @@
 	<div>
 		<table class="full">
 			<tr>
-				<td ng-repeat="genre in genres()" ng-style="{ width: (1 / genres().length) * 100 + '%' }" class="list-tab">
+				<td ng-repeat="genre in genres() | filter: hasAnySong" ng-style="{ width: (1 / genres().length) * 100 + '%' }" class="list-tab">
 					<ul class="list-group songlist">
 						<li class="list-group-item list-header">
 							<span class="list-title">{{ genre }}</span>
 						</li>
-						<li ng-repeat="song in byGenre()[genre]" class="list-group-item text-left">
+						<li ng-repeat="song in byGenre()[genre] | filter: matchFilter" class="list-group-item text-left">
 							<table class="full">
 								<tr>
 									<td>

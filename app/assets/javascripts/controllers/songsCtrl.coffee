@@ -6,6 +6,10 @@ class SongsCtrl extends BaseMvcCtrl
 
 	@inject "SongsHome"
 
+	initialize: =>
+		@s.searchText = ""
+		@focus()
+
 	authors: => @_allThe "author"
 
 	genres: => @_allThe "genre"
@@ -16,6 +20,9 @@ class SongsCtrl extends BaseMvcCtrl
 			.groupBy "genre"
 
 	create: =>
+		if @s.searchText isnt ""
+			@initialize() ; return
+
 		@loadAndFocus (
 			@SongsHome
 				.post @s.song
@@ -41,6 +48,14 @@ class SongsCtrl extends BaseMvcCtrl
 				.delete song._id
 				.then => @_remove song
 		)
+
+	hasAnySong: (genre) =>
+		@s.songs.find (song) =>
+			song.genre is genre and @matchFilter(song)
+
+	matchFilter: (song) =>
+		searchExp = new RegExp(".*#{@s.searchText}.*", "gi")
+		searchExp.test "#{song.title} - #{song.author}"
 
 	startEditing: (song) =>
 		if @isLoading then return

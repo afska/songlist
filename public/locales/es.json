@@ -7,6 +7,8 @@
 	"login.password": "Contraseña",
 	"login.error": "El usuario no existe o la contraseña es incorrecta",
 
+	"search": "Buscar",
+	
 	"song.title": "Título",
 	"song.author": "Autor",
 	"song.genre": "Género"

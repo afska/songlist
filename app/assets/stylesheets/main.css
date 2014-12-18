@@ -29,4 +29,6 @@
 	width: 35px;
 }
 
+.margin-bottom { margin-bottom: 3px; }
+
 .container-outer { overflow: scroll; overflow-y: hidden; }
