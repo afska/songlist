@@ -33,7 +33,7 @@ class Song < Model
 	#------
 
 	def before_save
-		self.identificator = "#{self.genre}-#{self.author}-#{self.title}"
+		self.identificator = "#{self.author}-#{self.title}"
 		self.submitted_at = DateTime.now
 	end
 end

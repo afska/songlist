@@ -29,7 +29,6 @@ describe "BaseMvcCtrl", ->
 		ctrl.setNotification()
 		expect(scope.notification).toBeUndefined()
 
-
 	it "can raise a focus event", (done) ->
 		scope.$on "focus", done
 		ctrl.focus()

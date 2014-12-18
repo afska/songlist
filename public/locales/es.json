@@ -1,8 +1,6 @@
 {
 	"songlist": "Songlist",
 
-	"header.order": "Ordenar",
-
 	"login.signInToContinue": "Iniciá sesión para continuar",
 	"login.signIn": "Iniciar sesión",
 	"login.username": "Nombre de usuario",

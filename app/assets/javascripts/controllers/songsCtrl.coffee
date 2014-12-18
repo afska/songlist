@@ -7,4 +7,12 @@ class SongsCtrl extends BaseMvcCtrl
 	@inject()
 
 	initialize: =>
-		window.debu = @s
+		window.debu = @
+
+	genres: =>
+		_.keys @byGenre()
+
+	byGenre: =>
+		@s.songs
+			.sortBy ["author", "title"]
+			.groupBy "genre"
