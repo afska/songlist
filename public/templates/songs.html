@@ -28,30 +28,32 @@
 	</form>
 </div>
 
-<div class="text-center">
-	<table class="full">
-		<tr>
-			<td ng-repeat="genre in genres()" ng-style="{ width: (1 / genres().length) * 100 + '%' }" class="list-tab">
-				<ul class="list-group songlist">
-					<li class="list-group-item list-header">
-						<span class="list-title">{{ genre }}</span>
-					</li>
-					<li ng-repeat="song in byGenre()[genre]" class="list-group-item text-left">
-						<table class="full">
-							<tr>
-								<td>
-									<span class="primary">{{ song.title }}</span> - 
-									<span class="secondary">{{ song.author }}</span>
-								</td>
-								<td class="icons">
-									<a ng-click="startEditing(song)" href="javascript:;"><i class="glyphicon glyphicon-edit"></i></a>
-									<a ng-click="delete (song)" href="javascript:;"><i class="glyphicon glyphicon-fire"></i></a>
-								</td>
-							</tr>
-						</table>
-					</li>
-				</ul>
-			</td>
-		</tr>
-	</table>
+<div class="text-center container-outer">
+	<div>
+		<table class="full">
+			<tr>
+				<td ng-repeat="genre in genres()" ng-style="{ width: (1 / genres().length) * 100 + '%' }" class="list-tab">
+					<ul class="list-group songlist">
+						<li class="list-group-item list-header">
+							<span class="list-title">{{ genre }}</span>
+						</li>
+						<li ng-repeat="song in byGenre()[genre]" class="list-group-item text-left">
+							<table class="full">
+								<tr>
+									<td>
+										<span class="primary">{{ song.title }}</span> - 
+										<span class="secondary">{{ song.author }}</span>
+									</td>
+									<td class="icons">
+										<a ng-click="startEditing(song)" href="javascript:;"><i class="glyphicon glyphicon-edit"></i></a>
+										<a ng-click="delete (song)" href="javascript:;"><i class="glyphicon glyphicon-fire"></i></a>
+									</td>
+								</tr>
+							</table>
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</div>
 </div>

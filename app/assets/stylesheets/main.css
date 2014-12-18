@@ -28,3 +28,5 @@
 .icons {
 	width: 35px;
 }
+
+.container-outer { overflow: scroll; overflow-y: hidden; }
