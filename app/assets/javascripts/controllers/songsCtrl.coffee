@@ -20,9 +20,6 @@ class SongsCtrl extends BaseMvcCtrl
 			.groupBy "genre"
 
 	create: =>
-		if @s.searchText isnt ""
-			@initialize() ; return
-
 		@loadAndFocus (
 			@SongsHome
 				.post @s.song
@@ -31,9 +28,6 @@ class SongsCtrl extends BaseMvcCtrl
 		)
 
 	edit: =>
-		if @s.searchText isnt ""
-			@initialize() ; return
-			
 		@loadAndFocus (
 			@SongsHome
 				.put @s.song._id, @s.song
