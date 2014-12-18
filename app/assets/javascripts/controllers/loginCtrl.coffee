@@ -4,11 +4,12 @@ class LandingCtrl extends BaseMvcCtrl
 	@inject "LoginHome", "$cookies"
 
 	login: =>
-		@load(
-			@LoginHome.post(@s.credentials)
-				.success(@createCookieAndRedirect)
-				.error(() => @setNotification "invalid-login")
-		).finally @focus
+		@loadAndFocus (
+			@LoginHome
+				.post @s.credentials
+				.success @createCookieAndRedirect
+				.error => @setNotification "invalid-login"
+		)
 
 	createCookieAndRedirect: (data) =>
 		@$cookies.auth = JSON.stringify data

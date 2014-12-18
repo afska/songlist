@@ -52,23 +52,25 @@
 
 <div class="text-center songlist">
 	<form role="form" action="javascript:;" method="post">
-		<div class="row">
-			<div class="col-md-3">
-				<input ng-model="song.title" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.title' | translate }}" maxlength="80">
-			</div>
+		<fieldset>
+			<div class="row">
+				<div class="col-md-3">
+					<input ng-model="song.title" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.title' | translate }}" maxlength="80" autofocus focus-on="focus">
+				</div>
 
-			<div class="col-md-3">
-				<input ng-model="song.author" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.author' | translate }}" maxlength="50">
-			</div>
+				<div class="col-md-3">
+					<input ng-model="song.author" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.author' | translate }}" maxlength="50">
+				</div>
 
-			<div class="col-md-3">
-				<input ng-model="song.genre" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.genre' | translate }}" maxlength="30">
-			</div>
+				<div class="col-md-3">
+					<input ng-model="song.genre" ng-disabled="isLoading" class="form-control" placeholder="{{ 'song.genre' | translate }}" maxlength="30">
+				</div>
 
-			<div class="col-md-3">
-				<button ng-click="alert('pio');" ng-disabled="isWaiting" class="btn btn-default full" type="submit"><i class="glyphicon glyphicon-music"></i><i class="glyphicon glyphicon-music"></i><i class="glyphicon glyphicon-music"></i></button>
+				<div class="col-md-3">
+					<button ng-click="add()" ng-disabled="isLoading" class="btn btn-primary full" type="submit"><i class="glyphicon glyphicon-music"></i> <i class="glyphicon glyphicon-share"></i></input>
+				</div>
 			</div>
-		</div>
+		</fieldset>
 	</form>
 </div>
 

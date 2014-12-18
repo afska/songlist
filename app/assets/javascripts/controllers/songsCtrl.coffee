@@ -4,15 +4,23 @@ class SongsCtrl extends BaseMvcCtrl
 	@route "/songs",
 		templateUrl: "templates/songs"
 
-	@inject()
+	@inject "SongsHome"
 
 	initialize: =>
 		window.debu = @
 
 	genres: =>
-		_.keys @byGenre()
+		_.keys(@byGenre()).sort()
 
 	byGenre: =>
 		@s.songs
 			.sortBy ["author", "title"]
 			.groupBy "genre"
+
+	add: =>
+		@loadAndFocus (
+			@SongsHome
+				.post @s.song
+				.data()
+				.then (s) => @s.songs.push s
+		)

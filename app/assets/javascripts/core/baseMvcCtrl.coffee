@@ -11,9 +11,13 @@ class @BaseMvcCtrl extends BaseCtrl
 
 	# Raise the focus event
 	focus: => @s.$broadcast "focus"
-	
+
 	# Is loading
 	startLoading: => @s.$root.isLoading = true
 
 	# Is not loading anymore
 	stopLoading: => @s.$root.isLoading = false
+
+	#Start loading for a promise, and focus at the end
+	loadAndFocus: (promise) =>
+		@load(promise).finally @focus
