@@ -5,5 +5,9 @@
 	"login.signIn": "Iniciar sesión",
 	"login.username": "Nombre de usuario",
 	"login.password": "Contraseña",
-	"login.error": "El usuario no existe o la contraseña es incorrecta"
+	"login.error": "El usuario no existe o la contraseña es incorrecta",
+
+	"song.title": "Título",
+	"song.author": "Autor",
+	"song.genre": "Género"
 }

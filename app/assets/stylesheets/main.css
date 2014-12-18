@@ -1,4 +1,4 @@
-.lists-container {
+.full {
 	width: 100%;
 }
 
@@ -8,6 +8,7 @@
 
 .songlist {
 	margin-left: 10px;
+	margin-right: 10px;
 	margin-top: 10px;
 }
 
@@ -23,4 +24,8 @@
 
 .secondary {
 	font-style: italic;
+}
+
+.icons {
+	float: right;
 }

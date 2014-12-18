@@ -5,5 +5,9 @@
 	"login.signIn": "Sign in",
 	"login.username": "Username",
 	"login.password": "Password",
-	"login.error": "The user doesn't exists or the password is invalid"
+	"login.error": "The user doesn't exists or the password is invalid",
+
+	"song.title": "Title",
+	"song.author": "Author",
+	"song.genre": "Genre"
 }
